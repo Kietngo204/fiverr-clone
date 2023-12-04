@@ -1,17 +1,20 @@
 import { configureStore } from "@reduxjs/toolkit";
 import scrollReducer from "./slices/scrollSlice";
 import modalReducer from "./slices/modalSlice";
-import signInReducer from "./thunks/users/signInThunk";
 import alertSlice from "./slices/alertSlice";
 import userSlice from "./slices/userSlice";
+import formSignSlice from "./slices/formSign";
+import rootReducers from "./thunks/userThunk";
 
 export const store = configureStore({
   reducer: {
     scroll: scrollReducer,
     modal: modalReducer,
-    signIn: signInReducer,
+    signIn: rootReducers.signIn,
+    signUp: rootReducers.signUp,
     alert: alertSlice,
     user: userSlice,
+    formSign: formSignSlice,
   },
 });
 

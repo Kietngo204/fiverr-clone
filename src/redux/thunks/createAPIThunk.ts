@@ -2,23 +2,26 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const createAPIThunk = (
   apiFunction: any,
-  sliceName: string,
-  initialState: any
+  sliceName: any,
+  initialState: any,
+  reducers: any = {}
 ) => {
   const asyncThunk = createAsyncThunk(
     `${sliceName}/apiCall`,
     async (payload: any, { dispatch, getState }) => {
-      const response = await apiFunction(payload);
-      return response.data?.content;
+      try {
+        const response = await apiFunction(payload);
+        return response;
+      } catch (error: any) {
+        throw error.response.data?.content;
+      }
     }
   );
 
   const slice = createSlice({
     name: sliceName,
     initialState,
-    reducers: {
-      // Các reducers khác nếu cần
-    },
+    reducers,
     extraReducers: (builder) => {
       builder.addCase(asyncThunk.pending, (state) => {
         state.isLoading = true;

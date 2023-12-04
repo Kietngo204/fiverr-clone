@@ -3,10 +3,8 @@ export interface SignInType {
   password: string;
 }
 
-export interface SignUpType {
+export interface SignUpType extends SignInType {
   name: string;
-  email: string;
-  password: string;
   phone: number;
 }
 

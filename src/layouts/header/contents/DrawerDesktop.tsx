@@ -7,6 +7,7 @@ import { RootState } from "../../../redux/store";
 import Logo from "../Logo";
 import { onOpenModal } from "../../../redux/slices/modalSlice";
 import Account from "../Account";
+import { setIsSignIn, setIsSignUp } from "redux/slices/formSign";
 
 interface DrawerDesktopProps {}
 
@@ -43,7 +44,13 @@ const DrawerDesktop: React.FC<DrawerDesktopProps> = () => {
         ) : (
           <>
             {" "}
-            <button className="font-bold mr-6" onClick={handleOpenModal}>
+            <button
+              className="font-bold mr-6"
+              onClick={() => {
+                handleOpenModal();
+                dispatch(setIsSignIn());
+              }}
+            >
               SIgn In
             </button>
             <button
@@ -56,11 +63,14 @@ const DrawerDesktop: React.FC<DrawerDesktopProps> = () => {
           text-[${joinColor}] 
           px-4 
           py-1.5 
-          hover:bg-[#1dbf73] 
+          hover:bg-[#7a9689] 
           hover:border-[#1dbf73]
           hover:text-white
           `}
-              onClick={handleOpenModal}
+              onClick={() => {
+                handleOpenModal();
+                dispatch(setIsSignUp());
+              }}
             >
               JoIn
             </button>

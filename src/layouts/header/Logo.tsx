@@ -1,12 +1,19 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 interface LogoProps {
   logoColor: string;
 }
 
 const Logo: React.FC<LogoProps> = ({ logoColor }) => {
+  const navigate = useNavigate();
   return (
-    <div>
+    <div
+      className="cursor-pointer"
+      onClick={() => {
+        navigate("/");
+      }}
+    >
       <svg
         viewBox="0 0 97 29.26368627101511"
         xmlns="http://www.w3.org/2000/svg"

@@ -7,11 +7,12 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { object, string } from "yup";
 import { SignInType } from "interfaces/userType";
-import { signIn } from "redux/thunks/users/signInThunk";
+import { signIn } from "redux/thunks/userThunk";
 import { useDispatch, useSelector } from "react-redux";
 import { onOpenAlert } from "redux/slices/alertSlice";
 import { RootState } from "redux/store";
 import { handleSignIn } from "redux/slices/userSlice";
+import { onCloseModal } from "redux/slices/modalSlice";
 
 const FormSignIn = () => {
   const [showPassword, setShowPassword] = React.useState(false);
@@ -20,9 +21,6 @@ const FormSignIn = () => {
     (state: RootState) => state.signIn
   );
 
-  const { user } = useSelector((state: RootState) => state.user);
-
-  console.log(user);
   const dispatch = useDispatch();
 
   const signinSchema = object({
@@ -58,10 +56,14 @@ const FormSignIn = () => {
           })
         );
       } else if (data) {
+        console.log(data);
         dispatch(
           onOpenAlert({ status: "success", message: "Login successful" })
         );
         dispatch(handleSignIn(data));
+        setTimeout(() => {
+          dispatch(onCloseModal());
+        }, 2000);
       }
       setSubmitted(false); // Đặt lại submitted sau khi xử lý thông báo
     }
@@ -107,9 +109,6 @@ const FormSignIn = () => {
           ),
         }}
       />
-      <div className="w-full flex justify-end">
-        <button className="underline">You already have an account</button>
-      </div>
       <button className="text-white bg-black px-6 py-3 rounded transition duration-300 hover:bg-[#404145]">
         Sign In
       </button>
