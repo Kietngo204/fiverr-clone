@@ -4,15 +4,15 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import CheckIcon from "@mui/icons-material/Check";
-
+import CloseIcon from "@mui/icons-material/Close";
 import { useDispatch, useSelector } from "react-redux";
-
 import FormSignIn from "components/forms/FormSignIn";
 import TransitionDialog from "components/TransitionModal";
 import { onCloseModal } from "redux/slices/modalSlice";
 import { RootState } from "redux/store";
 import FormSignUp from "components/forms/FormSignUp";
-import { setIsSignIn, setIsSignUp } from "redux/slices/formSign";
+import { setIsSignIn, setIsSignUp } from "redux/slices/formSignSlice";
+import MediaQueries from "components/mediaQueries/MediaQueries";
 
 const Sign = () => {
   const { openModal } = useSelector((state: RootState) => state.modal);
@@ -20,7 +20,7 @@ const Sign = () => {
     (state: RootState) => state.formSign
   );
   const dispatch = useDispatch();
-
+  const { isMobile, isTablet } = MediaQueries();
   const handleClose = () => {
     dispatch(onCloseModal());
   };
@@ -30,14 +30,15 @@ const Sign = () => {
       <Dialog
         fullWidth={true}
         maxWidth={"md"}
+        fullScreen={isMobile || isTablet ? true : false}
         open={openModal}
         TransitionComponent={TransitionDialog}
         keepMounted
         onClose={handleClose}
         aria-describedby="alert-dialog-slide-description"
       >
-        <div className="flex justify-between w-full h-[645px]">
-          <div className="w-1/2 bg-[url('https://fiverr-res.cloudinary.com/npm-assets/layout-server/standard.ddd97e5.png')] bg-cover bg-bottom px-[40px] py-[54px]">
+        <div className="md:flex md:justify-between w-full h-[100dvh] md:h-[645px]">
+          <div className="w-1/2 bg-[url('https://fiverr-res.cloudinary.com/npm-assets/layout-server/standard.ddd97e5.png')] bg-cover bg-bottom px-[40px] py-[54px] hidden md:block">
             <h2 className="text-white text-[2rem] font-bold">
               Success starts here
             </h2>
@@ -56,7 +57,10 @@ const Sign = () => {
               </li>
             </ul>
           </div>
-          <div className="w-1/2 mt-6 mb-8 px-10">
+          <div className="w-full md:w-1/2 mt-6 mb-8 px-10 relative">
+            <div className="absolute right-4" onClick={handleClose}>
+              <CloseIcon />
+            </div>
             {isSignin && (
               <>
                 <div className="mt-6 mb-8 ">

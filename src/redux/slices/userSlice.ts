@@ -1,26 +1,25 @@
-import { UserType } from "./../../interfaces/userType";
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
-interface UserState {
-  user: UserType | undefined;
+interface CurrentUserState {
+  currentUser: any;
 }
 
 const storedUser = localStorage.getItem("loginUser");
 
-const initialState: UserState = {
-  user: storedUser ? JSON.parse(storedUser) : undefined,
+const initialState: CurrentUserState = {
+  currentUser: storedUser ? JSON.parse(storedUser) : undefined,
 };
 
 const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
-    handleSignIn: (state, action: PayloadAction<UserType>) => {
-      state.user = action.payload;
-      localStorage.setItem("loginUser", JSON.stringify(action.payload));
+    handleSignIn: (state, action: PayloadAction<CurrentUserState>) => {
+      state.currentUser = action.payload;
+      localStorage.setItem("loginUser", JSON.stringify(state.currentUser));
     },
     handleRemoveUser: (state) => {
-      state.user = undefined;
+      state.currentUser = undefined;
       localStorage.removeItem("loginUser");
     },
   },

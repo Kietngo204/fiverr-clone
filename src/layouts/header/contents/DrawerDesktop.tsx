@@ -7,7 +7,7 @@ import { RootState } from "../../../redux/store";
 import Logo from "../Logo";
 import { onOpenModal } from "../../../redux/slices/modalSlice";
 import Account from "../Account";
-import { setIsSignIn, setIsSignUp } from "redux/slices/formSign";
+import { setIsSignIn, setIsSignUp } from "redux/slices/formSignSlice";
 
 interface DrawerDesktopProps {}
 
@@ -15,8 +15,7 @@ const DrawerDesktop: React.FC<DrawerDesktopProps> = () => {
   const { textColor, logoColor, joinColor } = useSelector(
     (state: RootState) => state.scroll
   );
-  const { user } = useSelector((state: RootState) => state.user);
-  // const { data } = useSelector((state: RootState) => state.signIn);
+  const { currentUser } = useSelector((state: RootState) => state.user);
 
   const dispatch = useDispatch();
 
@@ -39,7 +38,7 @@ const DrawerDesktop: React.FC<DrawerDesktopProps> = () => {
       </Typography>
 
       <Box sx={{ display: { xs: "none", sm: "block" } }}>
-        {!!user ? (
+        {!!currentUser ? (
           <Account />
         ) : (
           <>

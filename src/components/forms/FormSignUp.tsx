@@ -10,7 +10,7 @@ import { onOpenAlert } from "redux/slices/alertSlice";
 import { RootState } from "redux/store";
 import { number, object, string } from "yup";
 import { signUp } from "redux/thunks/userThunk";
-import { setIsSignIn } from "redux/slices/formSign";
+import { setIsSignIn } from "redux/slices/formSignSlice";
 
 const FormSignUp = () => {
   const [showPassword, setShowPassword] = React.useState(false);

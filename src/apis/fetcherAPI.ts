@@ -14,7 +14,7 @@ fetcher.interceptors.request.use(
     const user = JSON.parse(localStorage.getItem("loginUser") as any);
 
     if (user) {
-      request.headers.Authorization = `Bearer ${user.token.accessToken}`;
+      request.headers.Authorization = `Bearer ${user.token}`;
     }
 
     return request;

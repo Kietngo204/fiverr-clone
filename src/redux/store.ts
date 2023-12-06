@@ -3,7 +3,7 @@ import scrollReducer from "./slices/scrollSlice";
 import modalReducer from "./slices/modalSlice";
 import alertSlice from "./slices/alertSlice";
 import userSlice from "./slices/userSlice";
-import formSignSlice from "./slices/formSign";
+import formSignSlice from "./slices/formSignSlice";
 import rootReducers from "./thunks/userThunk";
 
 export const store = configureStore({
