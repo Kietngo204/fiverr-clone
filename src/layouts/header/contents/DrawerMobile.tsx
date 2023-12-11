@@ -4,7 +4,7 @@ import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "redux/store";
-import { onOpenModal } from "redux/slices/modalSlice";
+import { onOpenModalSign } from "redux/slices/modalSlice";
 import { setIsSignIn } from "redux/slices/formSignSlice";
 
 interface DrawerMobileProps {
@@ -73,7 +73,7 @@ export default function DrawerMobile(props: DrawerMobileProps) {
           <button
             className="text-[#62646a] font-bold"
             onClick={() => {
-              dispatch(onOpenModal());
+              dispatch(onOpenModalSign());
               dispatch(setIsSignIn());
             }}
           >

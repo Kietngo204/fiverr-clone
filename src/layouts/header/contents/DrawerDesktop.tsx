@@ -5,7 +5,7 @@ import Box from "@mui/material/Box";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../../redux/store";
 import Logo from "../Logo";
-import { onOpenModal } from "../../../redux/slices/modalSlice";
+import { onOpenModalSign } from "../../../redux/slices/modalSlice";
 import Account from "../Account";
 import { setIsSignIn, setIsSignUp } from "redux/slices/formSignSlice";
 
@@ -20,7 +20,7 @@ const DrawerDesktop: React.FC<DrawerDesktopProps> = () => {
   const dispatch = useDispatch();
 
   const handleOpenModal = () => {
-    dispatch(onOpenModal());
+    dispatch(onOpenModalSign());
   };
 
   return (
@@ -54,17 +54,16 @@ const DrawerDesktop: React.FC<DrawerDesktopProps> = () => {
             </button>
             <button
               className={`
-          font-bold 
-          border 
-          border-[${joinColor}] 
-          rounded 
-          text-sm 
-          text-[${joinColor}] 
-          px-4 
-          py-1.5 
-          hover:bg-[#7a9689] 
-          hover:border-[#1dbf73]
-          hover:text-white
+              font-bold 
+              border
+              rounded 
+              text-sm
+              ${joinColor}
+              px-4 
+              py-1.5 
+            hover:bg-[#1dbf73] 
+            hover:border-[#1dbf73]
+            hover:text-[#fff]
           `}
               onClick={() => {
                 handleOpenModal();

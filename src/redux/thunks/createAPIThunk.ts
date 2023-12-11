@@ -10,7 +10,12 @@ const createAPIThunk = (
     `${sliceName}/apiCall`,
     async (payload: any, { dispatch, getState }) => {
       try {
-        const response = await apiFunction(payload);
+        let response;
+        if (payload !== undefined) {
+          response = await apiFunction(payload);
+        } else {
+          response = await apiFunction(); // Gọi API mà không có tham số
+        }
         return response;
       } catch (error: any) {
         throw error.response.data?.content;

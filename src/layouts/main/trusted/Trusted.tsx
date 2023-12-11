@@ -1,5 +1,3 @@
-import React from "react";
-
 const Trusted = () => {
   return (
     <div className="w-full bg-[#f5f5f5] mb-[24px] mt-[-6px] lg:mb-[96px]">

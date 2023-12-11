@@ -31,7 +31,7 @@ export default function ElevationScroll(props: Props) {
           backgroundColor: "#fff",
           textColor: "#000",
           logoColor: "#000",
-          joinColor: "#1dbf73",
+          joinColor: "text-[#1dbf73] border-[#1dbf73]",
         })
       );
     } else {
@@ -40,7 +40,7 @@ export default function ElevationScroll(props: Props) {
           backgroundColor: "transparent",
           textColor: "#fff",
           logoColor: "#fff",
-          joinColor: "#fff",
+          joinColor: "text-[#fff] border-[#fff]",
         })
       );
     }

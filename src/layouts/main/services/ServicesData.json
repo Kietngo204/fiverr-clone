@@ -1,0 +1,57 @@
+[
+    {
+        "id": 1,
+        "tenLoaiCongViec": "Graphics & Design",
+        "bg":"https://i.pinimg.com/236x/81/ac/01/81ac01b29ba0e674304e88c32fe59d75.jpg"
+      },
+      {
+        "id": 2,
+        "tenLoaiCongViec": "Digital Marketing",
+        "bg":"https://i.pinimg.com/236x/2e/14/f0/2e14f004782aabf238b73439e1a2e1c8.jpg"
+      },
+      {
+        "id": 3,
+        "tenLoaiCongViec": "Writing & Translation",
+        "bg":"https://i.pinimg.com/564x/bc/e6/77/bce677a5a76b62de3a112f89643d7896.jpg"
+      },
+      {
+        "id": 4,
+        "tenLoaiCongViec": "Video & Animation",
+        "bg":"https://i.pinimg.com/236x/3d/5d/0d/3d5d0d5e28ab8838c695199c0d1cd320.jpg"
+      },
+      {
+        "id": 5,
+        "tenLoaiCongViec": "Music & Audio",
+        "bg":"https://i.pinimg.com/236x/07/83/05/07830598708c46495f8c883ead77f9f4.jpg"
+      },
+      {
+        "id": 372,
+        "tenLoaiCongViec": "Programming & Tech",
+        "bg":"https://i.pinimg.com/236x/7a/37/57/7a3757ced4d067d87e8fe8de70a33ad1.jpg"
+      },
+      {
+        "id": 395,
+        "tenLoaiCongViec": "AI",
+        "bg":"https://i.pinimg.com/236x/0e/a2/72/0ea2725f5cf978154ec8f450cfa8fbd8.jpg"
+      },
+      {
+        "id": 417,
+        "tenLoaiCongViec": "Digital Marketing",
+        "bg":"https://i.pinimg.com/236x/2e/14/f0/2e14f004782aabf238b73439e1a2e1c8.jpg"
+      },
+      {
+        "id": 426,
+        "tenLoaiCongViec": "Video & Animation3",
+        "bg":"https://i.pinimg.com/236x/3d/5d/0d/3d5d0d5e28ab8838c695199c0d1cd320.jpg"
+      },
+      {
+        "id": 428,
+        "tenLoaiCongViec": "Mạng Máy Tính",
+        "bg":"https://i.pinimg.com/236x/e7/fd/17/e7fd175a05614e77e8e90900e4bbdc20.jpg"
+      },
+      {
+        "id": 432,
+        "tenLoaiCongViec": "Linux",
+        "bg":"https://i.pinimg.com/564x/22/92/ad/2292add9f6c275d7fa1044f787c896f6.jpg"
+      }
+]

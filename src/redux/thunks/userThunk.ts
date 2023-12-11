@@ -21,9 +21,3 @@ export const { asyncThunk: signUp, slice: signUpSlice } = createAPIThunk(
     error: null,
   }
 );
-
-const rootReducers = {
-  signIn: signInSlice.reducer,
-  signUp: signUpSlice.reducer,
-};
-export default rootReducers;

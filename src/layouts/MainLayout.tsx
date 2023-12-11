@@ -5,6 +5,7 @@ import { Outlet } from "react-router-dom";
 import Sign from "./header/auth/Sign";
 import SnackBarMui from "components/alert/SnackbarMui";
 import Header from "./header/Header";
+import VideoModalSelling from "./main/selling/VideoModalSelling";
 
 export default function MainLayout() {
   return (
@@ -21,6 +22,7 @@ export default function MainLayout() {
       <Box component="main">
         <SnackBarMui />
         <Sign />
+        <VideoModalSelling />
         <Outlet />
       </Box>
     </Box>

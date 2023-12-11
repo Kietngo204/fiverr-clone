@@ -15,7 +15,7 @@ import { setIsSignIn, setIsSignUp } from "redux/slices/formSignSlice";
 import MediaQueries from "components/mediaQueries/MediaQueries";
 
 const Sign = () => {
-  const { openModal } = useSelector((state: RootState) => state.modal);
+  const { openModalSign } = useSelector((state: RootState) => state.modal);
   const { isSignin, isSignUp } = useSelector(
     (state: RootState) => state.formSign
   );
@@ -31,7 +31,7 @@ const Sign = () => {
         fullWidth={true}
         maxWidth={"md"}
         fullScreen={isMobile || isTablet ? true : false}
-        open={openModal}
+        open={openModalSign}
         TransitionComponent={TransitionDialog}
         keepMounted
         onClose={handleClose}

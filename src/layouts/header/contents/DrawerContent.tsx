@@ -9,7 +9,7 @@ import {
   ListItemText,
 } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
-import { onOpenModal } from "redux/slices/modalSlice";
+import { onOpenModalSign } from "redux/slices/modalSlice";
 import { setIsSignIn, setIsSignUp } from "redux/slices/formSignSlice";
 import { RootState } from "redux/store";
 import LogoutIcon from "@mui/icons-material/Logout";
@@ -36,7 +36,7 @@ const DrawerContent: React.FC<DrawerContentProps> = ({
           <button
             className="bg-[#1dbf73] text-white px-6 py-2 rounded font-bold"
             onClick={() => {
-              dispatch(onOpenModal());
+              dispatch(onOpenModalSign());
               dispatch(setIsSignUp());
             }}
           >
@@ -45,7 +45,7 @@ const DrawerContent: React.FC<DrawerContentProps> = ({
           <button
             className="py-3 font-bold text-[#62646a]"
             onClick={() => {
-              dispatch(onOpenModal());
+              dispatch(onOpenModalSign());
               dispatch(setIsSignIn());
             }}
           >
