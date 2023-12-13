@@ -25,6 +25,7 @@ const Services = () => {
     speed: 500,
     slidesToShow: 5,
     slidesToScroll: 5,
+    initialSlide: 0,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
     responsive: [
@@ -54,13 +55,17 @@ const Services = () => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          autoplay: true,
+          pauseOnHover: true,
+          nextArrow: <span></span>,
+          prevArrow: <span></span>,
         },
       },
     ],
   };
 
   return (
-    <div className="container mx-auto mb-6 sm:mb-[80px] lg:mb-24">
+    <div className="container mx-auto mb-6 w-full overflow-hidden sm:mb-[80px] sm:overflow-visible lg:mb-24">
       <h2 className="pb-6 text-[32px] font-bold text-[#404145]">
         Popular services
       </h2>

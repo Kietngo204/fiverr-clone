@@ -2,7 +2,7 @@ import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 
 const SellingLeft = () => {
   return (
-    <div className="w-1/2 max-w-xl">
+    <div className="w-full lg:w-1/2  pr-[11%]">
       <h2 className="pb-6 text-[32px] font-bold">The best part? Everything.</h2>
       <ul>
         <li className="pb-6">

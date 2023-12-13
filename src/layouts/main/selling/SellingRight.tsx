@@ -6,7 +6,7 @@ const SellingRight = () => {
   const dispatch = useDispatch();
   return (
     <div
-      className="w-1/2 h-full flex justify-end cursor-pointer"
+      className="w-full lg:w-1/2 h-full flex justify-end cursor-pointer"
       onClick={() => {
         dispatch(onOpenModalVideoSelling());
       }}

@@ -8,7 +8,7 @@ const ServicesItem = (service: any) => {
   };
   return (
     <div
-      className={`h-[345px] mx-2 rounded p-4 text-white text-2xl font-bold bg-cover bg-center `}
+      className={`mx-auto  h-[345px] w-[94%] rounded bg-cover bg-center p-4 text-2xl font-bold text-white`}
       style={divStyle}
     >
       {tenLoaiCongViec}

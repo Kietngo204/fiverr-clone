@@ -12,15 +12,15 @@ const BackgroundItem: React.FC<BackgroundItemProps> = ({ hero }) => {
   };
   return (
     <div
-      className="w-full h-[760px] relative hidden lg:inline-block"
+      className="relative hidden h-[760px] w-full lg:inline-block"
       style={divStyle}
     >
       <SearchTitle />
-      <div className="absolute top-0 left-0 w-full h-full z-10 ">
+      <div className="absolute left-0 top-0 z-10 h-full w-full ">
         <img
           src={`${hero.background}`}
           alt="background"
-          className=" object-top object-cover h-full mx-auto"
+          className=" mx-auto h-full object-cover object-top"
         />
       </div>
       <InfoHero hero={hero} />
